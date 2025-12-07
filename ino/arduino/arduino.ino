@@ -377,8 +377,8 @@ void loop() {
     int irRight = irDistance(RIGHT_IR_LED_PIN, RIGHT_IR_SENSOR_PIN);
 
     if (irLeft != 5 || irRight != 5) {
-      int driveLeft = (setpoint - irLeft) * kpl;     
-      int driveRight = (setpoint - irRight) * kpr;
+      int driveLeft = (setpoint - irRight) * kpl;     
+      int driveRight = (setpoint - irLeft) * kpr;
       move(100 + driveLeft, 100 + driveRight, 100);
     } else {
       int leftSpeedAdj = 0;
